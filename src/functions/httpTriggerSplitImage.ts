@@ -9,7 +9,7 @@ export async function httpTriggerSplitImage(request: HttpRequest, context: Invoc
 };
 
 app.http('httpTriggerSplitImage', {
-    methods: ['GET', 'POST'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: httpTriggerSplitImage
 });
