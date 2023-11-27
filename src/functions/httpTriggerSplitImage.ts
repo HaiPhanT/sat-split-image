@@ -29,7 +29,7 @@ export async function httpTriggerSplitImage(request: HttpRequest, context: Invoc
 
     if (!uploadFirstTime) {
         await createOrUpdateAKSPod(projectId);
-        console.info('Create AKS successfully!');
+        context.info(`Project ${projectId} - Create AKS Pod successfully!`);
     }
 
     await updateProject(projectId, {
