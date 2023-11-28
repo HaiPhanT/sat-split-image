@@ -9,14 +9,14 @@ export async function httpTriggerSplitImage(request: HttpRequest, context: Invoc
   try {
     const projectId = request.query.get('projectId');
 
-    context.info(`Project ${projectId} start processing split images.`);
+    // context.info(`Project ${projectId} start processing split images.`);
 
-    const body = await request.json() as { fileNames: string[] };
-    const fileNames = body.fileNames;
+    // const body = await request.json() as { fileNames: string[] };
+    // const fileNames = body.fileNames;
 
-    mongoose.set('strictQuery', true);
-    mongoose.set('autoCreate', true);
-    await mongoose.connect(databaseConfigs.URI);
+    // mongoose.set('strictQuery', true);
+    // mongoose.set('autoCreate', true);
+    // await mongoose.connect(databaseConfigs.URI);
 
     // await splitAndUploadImages(projectId, fileNames);
 
