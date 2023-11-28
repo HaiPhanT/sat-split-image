@@ -8,34 +8,34 @@ import { createOrUpdateAKSPod } from "../utils/aks.util";
 export async function httpTriggerSplitImage(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const projectId = request.query.get('projectId');
 
-  context.info(`Project ${projectId} start processing split images.`);
+  // context.info(`Project ${projectId} start processing split images.`);
 
-  const body = await request.json() as { fileNames: string[] };
-  const fileNames = body.fileNames;
+  // const body = await request.json() as { fileNames: string[] };
+  // const fileNames = body.fileNames;
 
-  mongoose.set('strictQuery', true);
-  mongoose.set('autoCreate', true);
-  await mongoose.connect(databaseConfigs.URI);
+  // mongoose.set('strictQuery', true);
+  // mongoose.set('autoCreate', true);
+  // await mongoose.connect(databaseConfigs.URI);
 
-  await splitAndUploadImages(projectId, fileNames);
+  // await splitAndUploadImages(projectId, fileNames);
 
-  const project = await ProjectModel.findById(projectId).exec();
+  // const project = await ProjectModel.findById(projectId).exec();
 
-  if (!project) {
-    throw new ProjectNotFoundError(projectId);
-  }
+  // if (!project) {
+  //   throw new ProjectNotFoundError(projectId);
+  // }
 
-  const uploadFirstTime = project.totalImages === 0;
+  // const uploadFirstTime = project.totalImages === 0;
 
-  if (!uploadFirstTime) {
-    await createOrUpdateAKSPod(projectId);
-    context.info(`Project ${projectId} - Create AKS Pod successfully!`);
-  }
+  // if (!uploadFirstTime) {
+  //   await createOrUpdateAKSPod(projectId);
+  //   context.info(`Project ${projectId} - Create AKS Pod successfully!`);
+  // }
 
-  await updateProject(projectId, {
-    status: ProjectStatus.IN_PROGRESS,
-  });
-  context.info(`Project ${projectId} is ready!`);
+  // await updateProject(projectId, {
+  //   status: ProjectStatus.IN_PROGRESS,
+  // });
+  // context.info(`Project ${projectId} is ready!`);
 
   return {
     body: `Project ${projectId} is ready!`,
