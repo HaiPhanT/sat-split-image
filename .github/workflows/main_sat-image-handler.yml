@@ -29,6 +29,7 @@ jobs:
         shell: pwsh
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          npm install --platform=win32 --arch=ia32 sharp
           npm install
           npm run build --if-present
           npm run test --if-present
