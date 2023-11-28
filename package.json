@@ -11,7 +11,13 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.0.0"
+    "@azure/functions": "^4.0.0",
+    "@azure/storage-blob": "^12.17.0",
+    "@kubernetes/client-node": "^0.20.0",
+    "@vingle/bmp-js": "^0.2.5",
+    "axios": "^1.6.2",
+    "mongoose": "^8.0.1",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "^18.x",
