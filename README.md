@@ -1,3 +1,3 @@
 # sioux-annotation-tool-image-handler
 
-Azure Function repo for image related functions
+Azure Function repo for image relasdfasfdated functions
