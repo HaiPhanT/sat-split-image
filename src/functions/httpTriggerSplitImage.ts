@@ -50,6 +50,6 @@ export async function httpTriggerSplitImage(request: HttpRequest, context: Invoc
 
 app.http('httpTriggerSplitImage', {
   methods: ['POST'],
-  authLevel: 'anonymous',
+  authLevel: 'function',
   handler: httpTriggerSplitImage
 });
