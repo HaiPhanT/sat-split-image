@@ -6,7 +6,7 @@ name: Build and deploy Node.js project to Azure Function App - sat-image-handler
 on:
   push:
     branches:
-      - main
+      - temp
   workflow_dispatch:
 
 env:
